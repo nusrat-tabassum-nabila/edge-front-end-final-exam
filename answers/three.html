@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <a href="one.html">Problem 1</a> |
+        <a href="two.html">Problem 2</a> |
+        <a href="three.html">Problem 3</a> |
+        <a href="four.html">Problem 4</a> |
+        <a href="five.html">Problem 5</a> |
+        <a href="six.html">Problem 6</a> |
+        <a href="seven.html">Problem 7</a> |
+        <a href="eight.html">Problem 8</a> |
+        <a href="nine.html">Problem 9</a>
+    </nav>
+    <br><br>
+    <h1>Problem 3</h1><br>
+    <div>
+        <form onsubmit="validateAge(event)">
+            Enter your age:
+            <input type="text" id="age"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <!-- Script -->
+    <script>
+        function validateAge(event) {
+            event.preventDefault(); // Prevent form submission
+            let ageInput = document.getElementById("age");
+            let age = parseInt(ageInput.value);
+
+            if (isNaN(age)) {
+                alert("Please enter a valid number!");
+                ageInput.style.border = "2px solid red";
+            } else if (age > 100) {
+                alert("Invalid Input");
+                ageInput.style.border = "2px solid red";
+            } else {
+                alert("You are " + age + " years old");
+                ageInput.style.border = ""; // Reset border color
+            }
+        }
+    </script>
+</body>
+
+</html>
